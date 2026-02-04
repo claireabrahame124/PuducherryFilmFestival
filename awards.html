@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankardoss Swamigal Award - Puducherry Film Festival</title>
+    <link rel="stylesheet" href="styles.css">
+   <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color:var(--primary-color);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #6c757d;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            background-color: #e9ecef;
+        }
+
+        .tab.active {
+            color: #000;
+            border-bottom-color: #FFD700;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #ECF0F1;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #2C3E50;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #BDC3C7;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #E0E0E0;
+            color: #34495E;
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background-color: #F8F9FA;
+        }
+
+        .year-col {
+            width: 100px;
+            font-weight: 600;
+        }
+
+        .language-col {
+            width: 150px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-tamil {
+            background-color: #D6EAF8;
+            color: #1F618D;
+        }
+
+        .badge-malayalam {
+            background-color: #D5F4E6;
+            color: #186A3B;
+        }
+
+        /* Yellow header tabs styling */
+        .tab.program { color: #FFD700; font-weight: 700; }
+        .tab.sessions { color: #FFD700; font-weight: 700; }
+        .tab.festival { color: #FFD700; font-weight: 700; }
+        .tab.download { color: #FFD700; font-weight: 700; }
+        .tab.others { color: #FFD700; font-weight: 700; }
+    </style>
+</head>
+<body>
+ <!-- Header -->
+<header class="header">
+    <div class="top-nav">
+
+        <!-- Left Logo -->
+        <div class="logo-container">
+            <img src="images/pfflogo.jpg" alt="Puducherry Film Festival Logo" class="logo">
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-center">
+            <ul class="main-nav" id="mainNav">
+                <li class="nav-item">
+<a href="index.html" class="nav-link">Home</a>
+</li>
+                <li class="nav-item">
+<a href="#" class="nav-link" onclick="toggleDropdown(event, this)">About</a>
+<div class="dropdown">
+                        <a href="about.html" class="dropdown-link">About PFF</a>
+                        <a href="organizing-committee.html" class="dropdown-link">Organising Team</a>
+                    </div>
+</li>
+                <li class="nav-item">
+<a href="#" class="nav-link" onclick="toggleDropdown(event, this)">Awards</a>
+<div class="dropdown">
+                        <a href="awards.html" class="dropdown-link">Sankardoss Swamigal Award</a>
+                    </div>
+</li>
+                <li class="nav-item">
+<a href="#" class="nav-link" onclick="toggleDropdown(event, this)">Program 2026</a>
+<div class="dropdown">
+                        <a href="indian-panorama.html" class="dropdown-link">Indian Panorama</a>
+                        <a href="international-films.html" class="dropdown-link">International Films</a>
+                        <a href="childrens-films.html" class="dropdown-link">Children's Films</a>
+                        <a href="documentary-films.html" class="dropdown-link">Documentary Films</a>
+                    </div>
+</li>
+                <li class="nav-item">
+<a href="#" class="nav-link" onclick="toggleDropdown(event, this)">Sessions</a>
+<div class="dropdown">
+                        <a href="master-classes.html" class="dropdown-link">Master Classes</a>
+                    </div></li>
+                <li class="nav-item">
+<a href="#" class="nav-link" onclick="toggleDropdown(event, this)">Festival</a>
+<div class="dropdown">
+                        <a href="gallery.html" class="dropdown-link">Gallery</a>
+                        <a href="venue.html" class="dropdown-link">Venue</a>
+                    </div></li>
+                <li class="nav-item">
+<a href="#" class="nav-link" onclick="toggleDropdown(event, this)">Download</a>
+<div class="dropdown">
+                        <a href="film-schedule.html" class="dropdown-link">Film Schedule</a>
+                    </div></li>
+                <li class="nav-item"><a href="#" class="nav-link" onclick="toggleDropdown(event, this)">Others</a><div class="dropdown">
+                        <a href="filmmakers-paradise.html" class="dropdown-link">Puducherry - a filmmaker's paradise</a>
+                        <a href="arts-crafts.html" class="dropdown-link">Arts and crafts of Puducherry</a>
+                        <a href="padma-awardees.html" class="dropdown-link">Our Padma Awardees</a>
+                    </div></li>
+                <li class="nav-item">
+<a href="contact.html" class="nav-link">Contact</a>
+</li>
+            </ul>
+
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle menu">☰</button>
+        </nav>
+
+        <!-- Right Logo -->
+        <div class="logo-right">
+            <img src="images/pylogo.jpg" alt="Government of Puducherry Logo">
+        </div>
+
+    </div>
+</header>
+
+
+    <section class="page-hero">
+        <img src="images/AwardsBanner.jpg">
+    </section>
+
+    <section class="content-section">
+       
+                <p class="content-text">
+                   The Government of Puducherry instituted the Sankar Doss Swamingal Award for the best directed film in the three languages which are spoken in different areas of the Union Territory of Puducherry namely Tamil, Telugu and Malayalam. The Award carries a cash prize of ₹ 1,00,000 along with a memento for the Director of the film. This Award has been given every year to a talented director.
+
+The following films and directors have received the Award over the last four decades:
+                </p><br>
+    </section>
+
+ 
+
+    <div class="container">
+        <!-- Tab Navigation -->
+        
+
+        <!-- Main Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th class="year-col">YEAR</th>
+                    <th>FILM TITLE</th>
+                    <th class="language-col">LANGUAGE</th>
+                    <th>DIRECTOR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="year-col">1995</td>
+                    <td>Parinayam</td>
+                    <td><span class="badge badge-malayalam">MALAYALAM</span></td>
+                    <td>Hariharan</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1996</td>
+                    <td>Indira</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Suhasini</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1997</td>
+                    <td>Kannatikkuvvu</td>
+                    <td><span class="badge badge-malayalam">MALAYALAM</span></td>
+                    <td>Sibi Malayil</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1998</td>
+                    <td>Kaliyattam</td>
+                    <td><span class="badge badge-malayalam">MALAYALAM</span></td>
+                    <td>Jayaraj</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1999</td>
+                    <td>The Terrorist</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Santosh Sivan</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2000</td>
+                    <td>Karunam</td>
+                    <td><span class="badge badge-malayalam">MALAYALAM</span></td>
+                    <td>Jayaraj</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2001</td>
+                    <td>Bharathi</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Dr. Gnana Rajasekaran, IAS</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2002</td>
+                    <td>Kadal Pookkal</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Bharathiraja</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2003</td>
+                    <td>Kannathil Muthamittal</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Mani Ratnam</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2004</td>
+                    <td>Oruthi</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Amshan Kumar</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2005</td>
+                    <td>Akale</td>
+                    <td><span class="badge badge-malayalam">MALAYALAM</span></td>
+                    <td>Shyamaprasad</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2005</td>
+                    <td>Ram</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Ameer</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2007</td>
+                    <td>Thuvamai Thuvamirundhu</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Cheran</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2008</td>
+                    <td>Periyar</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Gnana Sekaran</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2009</td>
+                    <td>Kanchivaram</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Priyadarshan</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2010</td>
+                    <td>Pasanga</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Pandiraj</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2011</td>
+                    <td>Angadi Theru</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Vasanthabalan</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2012</td>
+                    <td>Adaminte Makan Abu</td>
+                    <td><span class="badge badge-malayalam">MALAYALAM</span></td>
+                    <td>Salim Ahamed</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2013</td>
+                    <td>Vagai Sooda Vaa</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Sargunam</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2014</td>
+                    <td>Thanga Meengal</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Ram</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2015</td>
+                    <td>Kutram Kadithal</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Brahma</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2016</td>
+                    <td>Radio Petti</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Hari Viswanath</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2017</td>
+                    <td>Induhi Suttru</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Sudha Kongara</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2019</td>
+                    <td>Pariyerum Perumal (BABL)</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Mari Selvaraj</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2020</td>
+                    <td>Oruthi Sreppuy Size-7</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>R. Parthiban</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2021</td>
+                    <td>Thean</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Ganesh Vinayakan</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2022</td>
+                    <td>Kurunga Pedal</td>
+                    <td><span class="badge badge-tamil">TAMIL</span></td>
+                    <td>Kamala Kannan</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2023</td>
+                    <td>Kaathal – The Core</td>
+                    <td><span class="badge badge-malayalam">MALAYALAM</span></td>
+                    <td>Joo Baby</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="images/pylogo.jpg" alt="Government of Puducherry Logo">
+                <p class="govt-badge">Government of Puducherry</p>
+                <p class="govt-badge">Dept of Information & Publicity</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About PFF</a></li>
+                    <li><a href="gallery.html">Glimpses of PFF 2026</a></li>
+                    <li><a href="venue.html">Festival Venue</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Follow us on</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Pondicherry-Film-Festival/61584920428255/?rdid=7QWR8yDOHLjdwNNv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1H7KkGWTcQ%2F" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/puducherry_filmfestival?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/PFestival58216" class="social-link" target="_blank" rel="noopener" aria-label="Twitter/X">
+                        <svg width="20" height="20" fill="white" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26L22.8 21.75h-6.63l-5.196-6.79-5.94 6.79H1.724l7.73-8.835L1.2 2.25h6.797l4.694 6.207L18.244 2.25zm-1.161 17.52h1.833L6.996 4.126H5.03l12.053 15.644z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Puducherry Film Festival</p>
+    </div>
+</footer>
+<script>
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const mainNav = document.getElementById('mainNav');
+    mainNav.classList.toggle('active');
+}
+
+// Dropdown toggle for mobile
+function toggleDropdown(event, element) {
+    if (window.innerWidth <= 768) {
+        event.preventDefault();
+        const navItem = element.parentElement;
+        navItem.classList.toggle('active');
+    }
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const mainNav = document.getElementById('mainNav');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
+        if (!mainNav.contains(e.target) && !menuBtn.contains(e.target)) {
+            mainNav.classList.remove('active');
+        }
+    }
+});
+
+// Handle window resize
+let resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        const mainNav = document.getElementById('mainNav');
+        if (window.innerWidth > 768 && mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+        }
+    }, 250);
+});
+</script>
+</body>
+</html>

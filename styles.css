@@ -1,0 +1,1188 @@
+@import url('https://fonts.cdnfonts.com/css/myriad-pro');
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4487F2;
+    --secondary-color: #F6BD63;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #ffffff;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+}
+
+/* Header & Navigation */
+.header {
+    background: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.site-title {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: crimson;
+}
+
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 6px 10px;
+    display: block;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #CCCCFF;
+    min-width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1001;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.dropdown-link {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: block;
+    color: crimson;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-link:hover {
+    background: var(--light-bg);
+    color: var(--primary-color);
+}
+
+/* Right Logo */
+.logo-right img {
+    height: 50px;
+    width: auto;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: var(--secondary-color);
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: 4px;
+    line-height: 1;
+    transition: transform 0.2s;
+    touch-action: manipulation;
+}
+
+.mobile-menu-btn:active {
+    transform: scale(0.95);
+}
+
+/* Registration Banner */
+.registration-banner {
+    background: var(--secondary-color);
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.banner-track {
+    display: flex;
+    animation: scroll 25s linear infinite;
+    width: max-content;
+}
+
+.banner-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    white-space: nowrap;
+}
+
+.banner-text {
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;	
+}
+
+.new-badge {
+    background: crimson;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Hero Section */
+.hero {
+    min-height: 600px;
+    height: auto;
+    width: 100%;
+    background-image: url("images/HomePage1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--white);
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+}
+
+.hero-title {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 8vw, 72px);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(18px, 4vw, 28px);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.hero-dates {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(20px, 5vw, 32px);
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.register-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 12px 30px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px, 3vw, 18px);
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(246, 189, 99, 0.4);
+    touch-action: manipulation;
+    min-height: 44px;
+}
+
+.register-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(246, 189, 99, 0.6);
+}
+
+.register-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Info Section */
+.info-section {
+    background: var(--white);
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.info-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--light-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-title {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 5vw, 36px);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.info-text {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(16px, 3vw, 20px);
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.venues-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.venues-list li {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 3vw, 18px);
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.venues-list li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 18px;
+}
+
+/* Quick Links */
+.quick-links {
+    background: var(--primary-color);
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.quick-links-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quick-links h1 {
+    color: #CCCCFF;
+    text-align: center;
+    font-size: clamp(28px, 6vw, 42px);
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.link-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.link-card a {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    font-size: clamp(16px, 3vw, 20px);
+    color: var(--primary-color);
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2a6fd9, var(--primary-color));
+    color: var(--white);
+    width: 100%;
+}
+
+.footer-top {
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.govt-badge {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    font-size: clamp(14px, 3vw, 18px);
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.footer-section h3 {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 4vw, 24px);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: clamp(14px, 3vw, 16px);
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: transform 0.3s, background 0.3s;
+    font-size: 20px;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    background: var(--secondary-color);
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: clamp(12px, 2.5vw, 14px);
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: clamp(14px, 3vw, 16px);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-size: clamp(14px, 3vw, 16px);
+    transition: border-color 0.3s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 600;
+    font-size: clamp(16px, 3vw, 18px);
+    cursor: pointer;
+    transition: background 0.3s;
+    touch-action: manipulation;
+    min-height: 48px;
+}
+
+.submit-btn:hover {
+    background: #2a6fd9;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Content Pages */
+.page-hero {
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    background-color: var(--primary-color);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.page-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Desktop: 16:9 aspect ratio for page-hero */
+@media (min-width: 769px) {
+    .page-hero {
+        aspect-ratio: 16 / 9;
+        min-height: auto;
+        max-height: 100vh;
+    }
+    
+    .page-hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* Mobile: Full image visible with scroll */
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: auto;
+    }
+    
+    .page-hero img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.page-title {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(32px, 6vw, 48px);
+    color: var(--white);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: var(--primary-color);
+}
+
+.container {
+    max-width: 100%;
+}
+
+.content-card {
+    background: var(--primary-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.content-heading {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 5vw, 35px);
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.content-text {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(16px, 3vw, 21px);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(16px, 3vw, 18px);
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    color: white;
+    line-height: 1.6;
+}
+
+.feature-list li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.highlight-item {
+    padding: 25px;
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.highlight-item h4 {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 4vw, 22px);
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.highlight-item p {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 3vw, 16px);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.team-member {
+    text-align: center;
+    padding: 20px;
+    background: var(--light-bg);
+    border-radius: 8px;
+}
+
+.team-member h4 {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(16px, 4vw, 20px);
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.team-member p {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(14px, 3vw, 16px);
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 200px;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-placeholder {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    padding: 25px;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-card h4 {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 4vw, 22px);
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.contact-card p {
+    font-family: 'Myriad Pro', sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 3vw, 16px);
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .top-nav {
+        padding: 10px 15px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .links-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .site-title {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Responsive - Enhanced */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-center {
+        justify-content: flex-end;
+    }
+
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--primary-color);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        gap: 0;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link {
+        padding: 15px 10px;
+        font-size: 18px;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown {
+        position: static;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+        margin-top: 5px;
+    }
+
+    .nav-item:hover .dropdown {
+        display: none;
+    }
+
+    .nav-item.active .dropdown {
+        display: block;
+    }
+
+    .dropdown-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-right {
+        display: none;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .site-title {
+        font-size: 18px;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 30px 15px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-section img {
+        max-width: 150px;
+    }
+
+    .banner-item {
+        padding: 0 1.5rem;
+        gap: 0.8rem;
+    }
+
+    .banner-text {
+        font-size: 0.9rem;
+    }
+
+    .popup-content {
+        padding: 25px 20px;
+    }
+
+    .highlights-grid,
+    .team-grid,
+    .gallery-grid,
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    /* Better touch targets */
+    .link-card {
+        min-height: 60px;
+        padding: 20px;
+    }
+
+    .social-link {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+
+    /* Improved spacing for mobile */
+    .content-section {
+        padding: 30px 15px;
+    }
+
+    .info-section {
+        padding: 30px 15px;
+    }
+
+    .quick-links {
+        padding: 30px 15px;
+    }
+}
+
+/* Small Mobile - Enhanced */
+@media (max-width: 480px) {
+    .top-nav {
+        padding: 8px 10px;
+        gap: 10px;
+    }
+
+    .logo {
+        height: 35px;
+    }
+
+    .site-title {
+        font-size: 16px;
+    }
+
+    .hero {
+        min-height: 300px;
+        padding: 20px 10px;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
+
+    .link-card {
+        padding: 15px;
+        min-height: 50px;
+    }
+
+    .footer-top {
+        padding: 30px 15px;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .popup-content {
+        padding: 20px 15px;
+    }
+
+    .banner-text {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    .banner-item {
+        padding: 0 1rem;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+    }
+
+    /* Smaller grids for tiny screens */
+    .highlights-grid {
+        gap: 15px;
+    }
+
+    .highlight-item {
+        padding: 20px;
+    }
+
+    .team-grid {
+        gap: 15px;
+    }
+
+    .gallery-grid {
+        gap: 15px;
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 180px;
+    }
+}
+
+/* Fix for "To Be Announced" container on pages with inline styles */
+@media (max-width: 768px) {
+    .container[style*="margin-left"] {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100% !important;
+        padding: 40px 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container[style*="margin-left"] {
+        padding: 30px 15px !important;
+    }
+}
+
+/* Extra Small Devices (< 360px) */
+@media (max-width: 359px) {
+    .logo {
+        height: 30px;
+    }
+
+    .site-title {
+        font-size: 14px;
+    }
+
+    .mobile-menu-btn {
+        font-size: 24px;
+        padding: 6px 12px;
+    }
+
+    .hero {
+        min-height: 250px;
+        padding: 15px 8px;
+    }
+
+    .info-card,
+    .link-card,
+    .contact-form {
+        padding: 12px;
+    }
+
+    .banner-text {
+        font-size: 0.7rem;
+    }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 250px;
+    }
+
+    .main-nav {
+        max-height: calc(100vh - 60px);
+    }
+
+    .nav-link {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Improved accessibility and touch targets */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch devices */
+    .nav-link,
+    .dropdown-link,
+    .register-btn,
+    .link-card a,
+    .footer-links a,
+    .social-link,
+    .submit-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .link-card:hover,
+    .highlight-item:hover {
+        transform: none;
+    }
+
+    /* Better active states for touch */
+    .link-card:active,
+    .highlight-item:active {
+        transform: scale(0.98);
+        transition: transform 0.1s;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .mobile-menu-btn,
+    .registration-banner,
+    .footer {
+        display: none;
+    }
+
+    .hero,
+    .page-hero {
+        page-break-after: always;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+}
